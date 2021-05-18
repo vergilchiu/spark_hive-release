@@ -31,14 +31,7 @@ import java.net.InetAddress;
 import java.net.URI;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import javax.security.auth.login.LoginException;
@@ -223,6 +216,10 @@ public class HiveMetaStoreClient implements IMetaStoreClient {
           metastoreUris[i++] = tmpUri;
 
         }
+        // make metastore URIS random
+        List uriList = Arrays.asList(metastoreUris);
+        Collections.shuffle(uriList);
+        metastoreUris = (URI[]) uriList.toArray();
       } catch (IllegalArgumentException e) {
         throw (e);
       } catch (Exception e) {
