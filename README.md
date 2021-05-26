@@ -1,5 +1,7 @@
 # spark_hive-release
-hortonworks(hdp) 版本的spark_hive源码，spark依赖hive的源码，本质是hive的源码，和hdp-hive源码略有不同。
+hortonworks(hdp) 版本的spark_hive源码，spark依赖hive的源码，applying spark_hive patch。
+
+本质是hive的源码，和hdp-hive源码略有不同。
 
 这个hive版本是专门用于放到spark jars中的hive依赖。
 
